@@ -39,7 +39,26 @@ export default class App extends Component {
 
     return (
       <>
-        <Section title="Please leave feedback"></Section>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={objKey}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
+        </Section>
+
+        {total === 0 ? (
+          <Notification message="No feedback given" />
+        ) : (
+          <Section title="Statistics">
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          </Section>
+        )}
       </>
     );
   }
