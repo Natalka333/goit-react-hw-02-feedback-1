@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+
   return (
-    <>
+    
+    <div>
       {options.map(option => (
         <button
           key={nanoid()}
@@ -16,7 +18,8 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           {option}
         </button>
       ))}
-    </>
+    </div>
+    
   );
 };
 
