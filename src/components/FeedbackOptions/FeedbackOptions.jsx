@@ -8,14 +8,16 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     
     <div>
+      
       {options.map(option => (
         <button
           key={nanoid()}
           type="button"
           name={option}
-          onClick={onLeaveFeedback}
+          onClick={() => onLeaveFeedback(option)}
         >
           {option}
+        
         </button>
       ))}
     </div>
